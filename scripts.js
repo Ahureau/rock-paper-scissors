@@ -13,27 +13,26 @@ let playerSelection = prompt("Rock, paper, or scissors?");
 
 function playGame() {
     playerSelection = playerSelection.toLowerCase();
-    console.log(computerSelection, playerSelection);
     if (computerSelection === "rock" && playerSelection === "scissors") {
-        console.log("You lose! Rock beats scissors.");
+        return "You lose! Rock beats scissors.";
     } else if (computerSelection === "rock" && playerSelection === "paper") {
-        console.log("You win! Paper beats rock.");
+        return "You win! Paper beats rock.";
     } else if (computerSelection === "paper" && playerSelection === "rock") {
-        console.log("You lose! Rock beats scissors.");
+        return "You lose! Rock beats scissors.";
     } else if (computerSelection === "paper" && playerSelection === "scissors") {
-        console.log("You win! Scissors beat paper.");
+        return "You win! Scissors beat paper.";
     } else if (computerSelection === "scissors" && playerSelection === "scissors") {
-        console.log("You lose! scissors beats paper.");
+        return "You lose! scissors beats paper.";
     } else if (computerSelection === "scissors" && playerSelection === "paper") {
-        console.log("You lose! Scissors beat paper.")
+        return "You lose! Scissors beat paper.";
     } else if (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
-        console.log("That's not a valid choice. Pick rock, paper, or scissors.");
+        return "That's not a valid choice. Pick rock, paper, or scissors.";
     } else {
-        console.log("It's a tie!");
+        return "It's a tie!";
     }
 }
 
-playGame();
+console.log(playGame());
 
 /* Just trying something more complicated than needed.
 
