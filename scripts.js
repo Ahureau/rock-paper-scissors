@@ -1,4 +1,4 @@
-function getComputerChoice() {
+function getComputerChoice() { //33% chance for each.
     if (Math.random() > 0.66) {
         return "paper";
     } else if (Math.random() < 0.33) {
@@ -11,10 +11,9 @@ function getComputerChoice() {
 let computerScore = 0;
 let playerScore = 0;
 
-function playRound() {
+function playRound() { //asks for input from user and then compares to cpu input.
     let computerSelection = getComputerChoice();
-    let playerSelection = prompt("Rock, paper, or scissors?");
-    playerSelection = playerSelection.toLowerCase();
+    let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
     if (computerSelection === "rock" && playerSelection === "scissors") {
         computerScore++;
         return "You lose! Rock beats scissors.";
@@ -41,7 +40,7 @@ function playRound() {
     }
 }
 
-function winner() {
+function winner() { //Used at the end of 5 playGame() rounds to see who won.
     if (computerScore > playerScore) {
         console.log("You lose!");
     } else if (computerScore < playerScore) {
@@ -51,9 +50,9 @@ function winner() {
     }
 }
 
-function playGame(){
+function playGame(){ //Loops for 5 rounds.
     let round;
-    for (round = 1; round =< 5; round++) {
+    for (round = 1; round <= 5; round++) {
         console.log("Round " + round)
         console.log(playRound());
     }
@@ -61,42 +60,3 @@ function playGame(){
 }
 
 playGame();
-
-/* Just trying something more complicated than needed.
-
-function toNumbers(selection) {
-    if (selection.toLowerCase() === "rock") {
-        return selection = 1;
-    } else if (selection.toLowerCase() === "scissors") {
-        return selection = 2;
-    } else if ((selection.toLowerCase() === "paper")){
-        return selection = 3;
-    } else {
-        return selection = 0;
-    }
-}
-
-function playGame() {
-    computerSelection = toNumbers(computerSelection);
-    playerSelection = toNumbers(playerSelection);
-    console.log(computerSelection, playerSelection);
-    if (playerSelection === 0) {
-        console.log("That's not a valid choice. Pick rock, paper, or scissors.");
-    } else if (computerSelection === 1 && playerSelection === 2) {
-        console.log("You lose! Rock beats scissors.");
-    } else if (computerSelection === 1 && playerSelection === 3) {
-        console.log("You win! Paper beats rock.");
-    } else if (computerSelection === 2 && playerSelection === 1) {
-        console.log("You win! Rock beats scissors.");
-    } else if (computerSelection === 2 && playerSelection === 3) {
-        console.log("You lose! Scissors beat paper.");
-    } else if (computerSelection === 3 && playerSelection === 1) {
-        console.log("You lose! Paper beats rock.");
-    } else if (computerSelection === 3 && playerSelection === 2) {
-        console.log("You win! Scissors beat paper.")
-    } else {
-        console.log("It's a tie!");
-    }
-}
-
-*/
