@@ -56,7 +56,7 @@ function declareWinner() {
     } else if (computerScore < playerScore) {
         console.log("You win!");
     } else {
-        console.log("It's a tie!");
+        console.log("It's a tie! You both won the same number of times.");
     }
 }
 
