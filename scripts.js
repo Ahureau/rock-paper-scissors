@@ -1,4 +1,3 @@
-// Get computer to pick rock paper or scissors to compare later.
 
 function getComputerChoice() {
     if (Math.random() > 0.66) {
@@ -12,8 +11,6 @@ function getComputerChoice() {
 
 let computerScore = 0;
 let playerScore = 0;
-
-// Asks for input from user and then compares to cpu input.
 
 function playRound() {
     let computerSelection = getComputerChoice();
@@ -44,6 +41,15 @@ function playRound() {
     }
 }
 
+function playGame(){
+    let round;
+    for (round = 1; round <= 5; round++) {
+        console.log("Round " + round)
+        console.log(playRound());
+    }
+    declareWinner();
+}
+
 function declareWinner() {
     if (computerScore > playerScore) {
         console.log("You lose!");
@@ -52,15 +58,6 @@ function declareWinner() {
     } else {
         console.log("It's a tie!");
     }
-}
-
-function playGame(){
-    let round;
-    for (round = 1; round <= 5; round++) {
-        console.log("Round " + round)
-        console.log(playRound());
-    }
-    declareWinner();
 }
 
 playGame();
