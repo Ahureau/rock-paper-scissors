@@ -1,4 +1,6 @@
-function getComputerChoice() { //33% chance for each.
+// Get computer to pick rock paper or scissors to compare later.
+
+function getComputerChoice() {
     if (Math.random() > 0.66) {
         return "paper";
     } else if (Math.random() < 0.33) {
@@ -11,7 +13,9 @@ function getComputerChoice() { //33% chance for each.
 let computerScore = 0;
 let playerScore = 0;
 
-function playRound() { //asks for input from user and then compares to cpu input.
+// Asks for input from user and then compares to cpu input.
+
+function playRound() {
     let computerSelection = getComputerChoice();
     let playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
     if (computerSelection === "rock" && playerSelection === "scissors") {
@@ -40,7 +44,7 @@ function playRound() { //asks for input from user and then compares to cpu input
     }
 }
 
-function winner() { //Used at the end of 5 playGame() rounds to see who won.
+function declareWinner() {
     if (computerScore > playerScore) {
         console.log("You lose!");
     } else if (computerScore < playerScore) {
@@ -50,13 +54,13 @@ function winner() { //Used at the end of 5 playGame() rounds to see who won.
     }
 }
 
-function playGame(){ //Loops for 5 rounds.
+function playGame(){
     let round;
     for (round = 1; round <= 5; round++) {
         console.log("Round " + round)
         console.log(playRound());
     }
-    winner();
+    declareWinner();
 }
 
 playGame();
