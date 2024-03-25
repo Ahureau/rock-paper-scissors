@@ -47,15 +47,15 @@ function playRound(playerInput) {
         gameCount();
     } else if (computerSelection === "paper" && playerSelection === "rock") {
         computerScore++;
-        returnResult(computerSelection, playerInput, "You lose! Rock beats scissors.");
+        returnResult(computerSelection, playerInput, "You lose! Paper beats rock.");
         gameCount();
     } else if (computerSelection === "paper" && playerSelection === "scissors") {
         playerScore++;
         returnResult(computerSelection, playerInput, "You win! Scissors beat paper.");
         gameCount();
-    } else if (computerSelection === "scissors" && playerSelection === "scissors") {
-        computerScore++;
-        returnResult(computerSelection, playerInput, "You lose! scissors beats paper.");
+    } else if (computerSelection === "scissors" && playerSelection === "rock") {
+        playerScore++;
+        returnResult(computerSelection, playerInput, "You win! Rock beats scissors.");
         gameCount();
     } else if (computerSelection === "scissors" && playerSelection === "paper") {
         computerScore++;
