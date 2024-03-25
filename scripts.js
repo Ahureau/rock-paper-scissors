@@ -131,5 +131,7 @@ function resetFunction() {
     computerScore = 0;
     playerScore = 0;
     disableButtons();
-    document.getElementById("results").innerHTML = "";
+    while (resultsDiv.firstChild) {
+        resultsDiv.removeChild(resultsDiv.firstChild);
+    };
 }
